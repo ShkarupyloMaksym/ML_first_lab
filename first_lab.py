@@ -71,7 +71,7 @@ install_from_google_drive(file_url, data_file_name)
 ## Constants
 """
 
-k = get_alphabet_position('Ш')
+k = get_alphabet_position('М')
 m = 9
 
 pd.set_option('display.float_format', '{:.2f}'.format)
@@ -187,9 +187,9 @@ year = int(f'20{str(num).zfill(2)}')
 
 data_for_year = data[data['Year'] == year]
 
-grouped_month_sales = data_for_year.groupby('Month', sort=False)['Total Sales New'].sum().reset_index()
+grouped_month_sales = data_for_year.groupby('Month', sort=False)['New'].sum().reset_index()
 
-plt.bar(grouped_month_sales['Month'], grouped_month_sales['Total Sales New'])
+plt.bar(grouped_month_sales['Month'], grouped_month_sales['New'])
 plt.title(f'Продаж машин за місяціми в {year}')
 plt.xlabel('Назви місяців')
 plt.ylabel('Кількість проданих')
